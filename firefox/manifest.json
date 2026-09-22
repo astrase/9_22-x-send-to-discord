@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "X Like to Discord",
+  "version": "1.0.0",
+  "description": "X で付けたいいねを Discord Webhook に保存します。",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*",
+    "https://discord.com/api/webhooks/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "X Like to Discord の設定"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; base-uri 'self'"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "x-like-to-discord@example.invalid"
+    }
+  }
+}

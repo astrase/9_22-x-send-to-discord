@@ -1,0 +1,11 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; }
+main { max-width: 620px; margin: 48px auto; padding: 0 24px; }
+h1 { margin-bottom: 8px; }
+label { display: block; font-weight: 700; margin: 28px 0 8px; }
+input { box-sizing: border-box; width: 100%; padding: 11px; border: 1px solid #888; border-radius: 7px; font: inherit; }
+.hint { color: #666; font-size: .9rem; }
+.buttons { display: flex; gap: 10px; margin-top: 20px; }
+button { border: 0; border-radius: 7px; padding: 10px 14px; background: #1d9bf0; color: white; cursor: pointer; font: inherit; }
+button.secondary { background: #555; }
+#status { min-height: 1.5em; } .success { color: #16803c; } .error { color: #c22; }

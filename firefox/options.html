@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X Like to Discord - 設定</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>X Like to Discord</h1>
+    <p>Xで付けたいいねをDiscordに保存します。</p>
+    <label for="webhook-url">Discord Webhook URL</label>
+    <input id="webhook-url" type="url" autocomplete="off" spellcheck="false" placeholder="https://discord.com/api/webhooks/...">
+    <p class="hint">URLはこのブラウザの拡張機能ストレージにのみ保存されます。</p>
+    <div class="buttons">
+      <button id="save" type="button">保存</button>
+      <button id="test" type="button" class="secondary">Discord接続テスト</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
