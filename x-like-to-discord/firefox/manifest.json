@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "X Like to Discord",
+  "version": "1.3.1",
+  "description": "Xでいいねした投稿URLを、自分で設定したDiscord Webhookへ送信します。",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://discord.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "js": [
+        "core.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "X → Discord 設定"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://discord.com"
+  },
+  "background": {
+    "scripts": [
+      "core.js",
+      "background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "x-like-to-discord@local.example",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "websiteActivity",
+          "authenticationInfo"
+        ]
+      }
+    }
+  }
+}
